@@ -18,8 +18,8 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className="header-center flex items-center flex-1 bg-slate-100 rounded-full px-5 gap-x-3">
-                        <CiSearch size={20} />
-                        <input type="text" className="max-w-full w-full bg-transparent border-none py-1.5 text-sm" />
+                        <CiSearch size={20} className="bg-slate-100" />
+                        <input type="text" className="max-w-full w-full bg-transparent border-none py-2 text-sm" placeholder="Search..." />
                     </div>
                     <HeaderRight />
                 </div>

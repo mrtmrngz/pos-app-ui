@@ -9,7 +9,7 @@ export default {
       container: {
         padding: {
           DEFAULT: "4%",
-          sm: "1%"
+          sm: "2%"
         }
       },
       colors: {

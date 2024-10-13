@@ -43,7 +43,7 @@ const HeaderRight = () => {
     return (
         <div className="header-right">
             <div
-                className="header-right-links fixed left-0 bottom-0 py-3 md:py-0 w-full px-[4%] md:px-0 border-t md:border-t-transparent border-t-border-color md:static flex items-center justify-between gap-x-8">
+                className="header-right-links fixed left-0 bottom-0 py-3 md:py-0 w-full px-[4%] md:px-0 border-t md:border-t-transparent border-t-border-color md:static flex items-center justify-between gap-x-8 z-[95] bg-white">
 
                 {links.map((link, index) => (
                     <div key={index}
