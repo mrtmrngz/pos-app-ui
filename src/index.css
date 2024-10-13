@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        background: #FAFAFA;
+        @apply text-text-color;
+    }
+
+    h1 {
+        @apply font-semibold text-2xl ;
+    }
+
+    input, textarea {
+        @apply border border-border-color focus:outline-none focus:border-text-color;
+    }
+
+    textarea {
+        @apply resize-none;
+    }
+
+    button {
+        @apply cursor-pointer;
+
+        &.btn {
+            @apply mx-10 h-10 px-5 w-max duration-300 hover:opacity-80 ;
+
+            &.danger {
+                @apply bg-danger text-white;
+            }
+
+            &.primary {
+                @apply bg-primary text-white;
+            }
+
+            &.secondary {
+                @apply bg-secondary text-white;
+            }
+
+            &.small {
+                @apply h-7 px-3;
+            }
+
+            &.large {
+                @apply h-12 px-7;
+            }
+        }
+    }
+    
+    .header-right-link a {
+
+        @apply transition-all;
+
+        &:hover {
+            @apply text-primary ;
+        }
+
+        &.active {
+            @apply text-primary ;
+        }
+    }
+
+}
