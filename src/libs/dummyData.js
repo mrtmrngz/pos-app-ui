@@ -1,28 +1,34 @@
 export const categoryData = [
     {
         id: "1",
-        title: "Meyve"
+        title: "Meyve",
+        image: "https://plus.unsplash.com/premium_photo-1671379041175-782d15092945?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJ1aXRzfGVufDB8fDB8fHww",
     },
     {
         id: "2",
-        title: "Sebze"
+        title: "Sebze",
+        image: "https://plus.unsplash.com/premium_photo-1723471224152-723f8a6ecbaa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmVnYXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
         id: "3",
-        title: "Kuruyemiş"
+        title: "Kuruyemiş",
+        image: "https://images.unsplash.com/photo-1477506350614-fcdc29a3b157?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bnV0c3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
         id: "4",
-        title: "Elektronik"
+        title: "Elektronik",
+        image: "https://images.unsplash.com/photo-1611532736573-418fe4ae3260?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3Ryb25pY3xlbnwwfHwwfHx8MA%3D%3D",
     },
     {
         id: "5",
-        title: "Yiyecek"
+        title: "Yiyecek",
+        image: "https://plus.unsplash.com/premium_photo-1661777702966-aed29ab4106b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVhbHxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
         id: "6",
-        title: "İçecek"
-    }
+        title: "İçecek",
+        image: "https://images.unsplash.com/photo-1457518919282-b199744eefd6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D",
+    },
 ]
 
 export const productData = [

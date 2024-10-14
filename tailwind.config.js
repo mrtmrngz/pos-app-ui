@@ -12,6 +12,9 @@ export default {
           sm: "2%"
         }
       },
+      gridTemplateColumns: {
+        'card': "repeat(auto-fill, minmax(min(100%, 150px), 1fr))"
+      },
       colors: {
         'primary': "#42A5F5",
         'secondary': "#81C784",
