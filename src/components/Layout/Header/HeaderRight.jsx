@@ -3,6 +3,8 @@ import { IoMdHome, IoMdPerson  } from "react-icons/io";
 import { LiaNewspaperSolid } from "react-icons/lia";
 import { FaSignOutAlt, FaShoppingCart  } from "react-icons/fa";
 import {AiOutlineUser} from "react-icons/ai";
+import { IoMdStats } from "react-icons/io";
+
 
 
 const HeaderRight = () => {
@@ -17,13 +19,6 @@ const HeaderRight = () => {
             icon: <IoMdHome size={28} />
         },
         {
-            label: "Cart",
-            url: "/cart",
-            icon: <FaShoppingCart size={28} className="p-0.5" />,
-            badge: true,
-            number: number
-        },
-        {
             label: "Bills",
             url: "/bills",
             icon: <LiaNewspaperSolid size={28} />
@@ -32,6 +27,11 @@ const HeaderRight = () => {
             label: "Customers",
             url: "/customers",
             icon: <AiOutlineUser size={28} />
+        },
+        {
+            label: "Statistics",
+            url: "/statistics",
+            icon: <IoMdStats size={28} />
         },
         {
             label: "Sign Out",
@@ -60,13 +60,13 @@ const HeaderRight = () => {
 
             </div>
 
-            <div className={`header-right-link md:hidden flex items-center relative justify-center ${pathname === "/cart" && "active"}`}>
-                <Link to="/cart" className="flex flex-col items-center gap-y-0.5">
+            <div className={`header-right-link md:hidden flex items-center relative justify-center ${pathname !== "/" ? "hidden" : ""}`}>
+                <a href="#cart" className="flex flex-col items-center gap-y-0.5">
                     <FaShoppingCart size={20}/>
                     <span className="text-xs">Cart</span>
                     {number > 0 && <span
                         className="badge w-5 h-5 bg-danger text-white text-[10px] text-center rounded-full flex items-center justify-center absolute -top-3 -right-4 font-semibold">{number}</span>}
-                </Link>
+                </a>
             </div>
         </div>
     );

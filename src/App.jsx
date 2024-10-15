@@ -2,9 +2,9 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ProtectedRoute from "./libs/ProtectedRoute.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import MainLayout from "./components/Layout/MainLayout.jsx";
-import CartPage from "./pages/CartPage.jsx";
 import BillPage from "./pages/BillPage.jsx";
 import CustomersPage from "./pages/CustomersPage.jsx";
+import StatisticsPage from "./pages/StatisticsPage.jsx";
 
 
 const routes = createBrowserRouter([
@@ -21,16 +21,16 @@ const routes = createBrowserRouter([
                         element: <HomePage />
                     },
                     {
-                        path: "cart",
-                        element: <CartPage />
-                    },
-                    {
                         path: "bills",
                         element: <BillPage />
                     },
                     {
                         path: "customers",
                         element: <CustomersPage />
+                    },
+                    {
+                        path: "statistics",
+                        element: <StatisticsPage />
                     }
                 ]
             }

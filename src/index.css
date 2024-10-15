@@ -92,4 +92,22 @@
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
+    .custom-table {
+        & > thead > tr > th {
+            @apply p-4 bg-[#eaeaea] border border-border-color text-sm font-bold text-left;
+        }
+
+        & > tbody > tr {
+            @apply hover:bg-[#eaeaea];
+
+             & > td {
+                 @apply p-4 border border-border-color border-l-0 text-sm;
+
+                 &:last-child {
+                     @apply border-r-0;
+                 }
+             }
+        }
+    }
+
 }
