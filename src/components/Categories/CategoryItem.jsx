@@ -4,9 +4,8 @@ import {memo} from 'react'
 import {useNavigate} from "react-router-dom";
 
 
-const CategoryItem = ({type, active, category, setIsAddModalOpen}) => {
+const CategoryItem = ({type, active, category, setIsAddModalOpen, setIsEditModalOpen}) => {
 
-    const navigate = useNavigate()
 
     if (type === "categoryItem") {
         return (
@@ -50,7 +49,7 @@ const CategoryItem = ({type, active, category, setIsAddModalOpen}) => {
         );
     } else if (type === "edit") {
         return (
-            <div className="category-item flex flex-col items-center justify-between cursor-pointer" onClick={() => navigate("/bills")}>
+            <div className="category-item flex flex-col items-center justify-between cursor-pointer" onClick={() => setIsEditModalOpen(true)}>
                 <div
                     className="category-icon w-16 h-16 flex items-center justify-center bg-secondary rounded-full text-xs text-white border-4 border-soft-gray transition-all">
                     <FaPen />

@@ -3,9 +3,8 @@ import {FaPen} from "react-icons/fa";
 import {memo} from 'react'
 import {useNavigate} from "react-router-dom";
 
-const ProductItem = ({type, color, product, setIsAddModalOpen, isModalAddOpen}) => {
+const ProductItem = ({type, color, product, setIsAddModalOpen, setIsEditModalOpen}) => {
 
-    const navigate = useNavigate()
 
     if(type === "isProduct") {
         return (
@@ -34,7 +33,7 @@ const ProductItem = ({type, color, product, setIsAddModalOpen, isModalAddOpen}) 
                     if(type === "add") {
                         setIsAddModalOpen(true)
                     }else if(type === "edit") {
-                        navigate("/bills")
+                        setIsEditModalOpen(true)
                     }
                 }}
             >

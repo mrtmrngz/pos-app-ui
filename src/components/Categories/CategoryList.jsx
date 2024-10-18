@@ -15,6 +15,7 @@ const CategoryList = () => {
     const [canNavigate, setCanNavigate] = useState(false)
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false)
     const {categories} = useCategory()
 
 
@@ -98,7 +99,7 @@ const CategoryList = () => {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <CategoryItem type="edit" active={selectedCategory} />
+                        <CategoryItem type="edit" active={selectedCategory} setIsEditModalOpen={setIsEditModalOpen} />
                     </SwiperSlide>
 
                     <SwiperSlide>
@@ -123,7 +124,8 @@ const CategoryList = () => {
                     </button>
                 </div>
             )}
-            {isAddModalOpen && <AddCategoryModal onOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />}
+            <AddCategoryModal onOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />
+            <EditCategoryModal onOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
         </div>
     );
 };

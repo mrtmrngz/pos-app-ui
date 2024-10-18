@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import ProductItem from "./ProductItem.jsx";
 import {useProduct} from "../../Context/index.js";
 import AddProductModal from "../Modals/AddProductModal.jsx";
+import EditProductModal from "../Modals/EditProductModal.jsx";
 
 const ProductList = () => {
 
     const [isModalAddOpen, setIsAddModalOpen] = useState(false)
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
     const {products} = useProduct()
 
@@ -18,12 +20,13 @@ const ProductList = () => {
                         <ProductItem key={product.id} product={product} color={false} type="isProduct" />
                     ))}
 
-                    <ProductItem type="add" isModalAddOpen={isModalAddOpen} setIsAddModalOpen={setIsAddModalOpen} />
-                    <ProductItem type="edit" />
+                    <ProductItem type="add" setIsAddModalOpen={setIsAddModalOpen} />
+                    <ProductItem type="edit" setIsEditModalOpen={setIsEditModalOpen} />
 
                 </div>
             </div>
-            {isModalAddOpen && <AddProductModal onOpen={isModalAddOpen} onClose={() => setIsAddModalOpen(false)} />}
+            <AddProductModal onOpen={isModalAddOpen} onClose={() => setIsAddModalOpen(false)} />
+            <EditProductModal onOpen={isEditModalOpen} setIsEditModalOpen={setIsEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
         </div>
     );
 };

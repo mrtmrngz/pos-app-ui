@@ -111,30 +111,29 @@
     }
 
     .backdrop {
+        /*visibility: hidden;*/
         opacity: 0;
         pointer-events: none;
-        animation: open-modal 300ms ease forwards;
+        transition: opacity .2s ease;
+        /*animation: open-modal 300ms ease forwards;*/
+
+        &.active {
+            /*visibility: visible;*/
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 
     .modal-wrapper {
         @apply z-[700] fixed inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] md:w-[600px] lg:w-1/2 2xl:w-[900px] h-max bg-white rounded-xl;
         opacity: 0;
         pointer-events: none;
-        animation: open-modal 300ms ease forwards;
-    }
+        transition: opacity .2s ease;
 
-    @keyframes open-modal {
-        from {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        to {
+        &.active {
             opacity: 1;
             pointer-events: auto;
         }
     }
-
-
 
 }
