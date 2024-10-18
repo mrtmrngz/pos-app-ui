@@ -66,7 +66,7 @@
     }
 
     .slider-swipe-buttons {
-        @apply h-8 w-8 flex items-center justify-center bg-soft-gray rounded-full border border-transparent hover:border-black absolute top-1/2 transform -translate-y-[80%] z-[998] transition-all duration-300 cursor-pointer;
+        @apply h-8 w-8 flex items-center justify-center bg-soft-gray rounded-full border border-transparent hover:border-black absolute top-1/2 transform -translate-y-[80%] z-[500] transition-all duration-300 cursor-pointer;
 
         &:hover {
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -109,5 +109,32 @@
              }
         }
     }
+
+    .backdrop {
+        opacity: 0;
+        pointer-events: none;
+        animation: open-modal 300ms ease forwards;
+    }
+
+    .modal-wrapper {
+        @apply z-[700] fixed inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] md:w-[600px] lg:w-1/2 2xl:w-[900px] h-max bg-white rounded-xl;
+        opacity: 0;
+        pointer-events: none;
+        animation: open-modal 300ms ease forwards;
+    }
+
+    @keyframes open-modal {
+        from {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        to {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+
 
 }

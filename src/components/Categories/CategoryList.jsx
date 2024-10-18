@@ -6,12 +6,15 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import React, {useEffect, useRef, useState} from "react";
 import {useCategory} from "../../Context/index.js";
+import AddCategoryModal from "../Modals/AddCategoryModal.jsx";
+import EditCategoryModal from "../Modals/EditCategoryModal.jsx";
 
 
 const CategoryList = () => {
 
     const [canNavigate, setCanNavigate] = useState(false)
     const [selectedCategory, setSelectedCategory] = useState(null)
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false)
     const {categories} = useCategory()
 
 
@@ -91,7 +94,7 @@ const CategoryList = () => {
                 >
 
                     <SwiperSlide>
-                        <CategoryItem type="add" />
+                        <CategoryItem type="add" setIsAddModalOpen={setIsAddModalOpen} />
                     </SwiperSlide>
 
                     <SwiperSlide>
@@ -120,6 +123,7 @@ const CategoryList = () => {
                     </button>
                 </div>
             )}
+            {isAddModalOpen && <AddCategoryModal onOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />}
         </div>
     );
 };

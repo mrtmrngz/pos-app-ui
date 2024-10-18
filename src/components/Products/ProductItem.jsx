@@ -1,8 +1,11 @@
 import {GoPlus} from "react-icons/go";
 import {FaPen} from "react-icons/fa";
 import {memo} from 'react'
+import {useNavigate} from "react-router-dom";
 
-const ProductItem = ({type, color, product}) => {
+const ProductItem = ({type, color, product, setIsAddModalOpen, isModalAddOpen}) => {
+
+    const navigate = useNavigate()
 
     if(type === "isProduct") {
         return (
@@ -27,6 +30,13 @@ const ProductItem = ({type, color, product}) => {
         return (
             <button
                 className={`product-item border h-[194px] text-white flex items-center justify-center border-transparent transition-all duration-300 rounded-xl ${type === "add" ? "bg-primary" : "bg-secondary"}`}
+                onClick={() => {
+                    if(type === "add") {
+                        setIsAddModalOpen(true)
+                    }else if(type === "edit") {
+                        navigate("/bills")
+                    }
+                }}
             >
                 {type === "add" ? <GoPlus className="text-5xl" /> : <FaPen className="text-2xl" />}
             </button>

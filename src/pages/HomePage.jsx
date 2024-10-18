@@ -2,10 +2,13 @@ import CategoryList from "../components/Categories/CategoryList.jsx";
 import ProductList from "../components/Products/ProductList.jsx";
 import Cart from "../components/Cart/Cart.jsx";
 import {useEffect, useState} from "react";
+import Modal from "../components/Portals/Modal.jsx";
+import AddProductModal from "../components/Modals/AddProductModal.jsx";
 
 const HomePage = () => {
 
     const [isRow, setIsRow] = useState(false)
+
 
     const handleResize = () => {
         if(window.innerWidth < 1024) {
@@ -36,6 +39,8 @@ const HomePage = () => {
             <div className={`right lg:flex-1 flex-none mt-7 lg:mt-0 lg:mx-0 h-full border-l border-b border-border-color p-0 ${isRow ? "container mx-auto border-t border-r" : ""}`} id="cart">
                 <Cart />
             </div>
+
+
         </div>
     );
 };

@@ -1,10 +1,12 @@
 import {GoPlus} from "react-icons/go";
 import {FaPen} from "react-icons/fa";
 import {memo} from 'react'
+import {useNavigate} from "react-router-dom";
 
 
-const CategoryItem = ({type, active, category}) => {
+const CategoryItem = ({type, active, category, setIsAddModalOpen}) => {
 
+    const navigate = useNavigate()
 
     if (type === "categoryItem") {
         return (
@@ -36,7 +38,7 @@ const CategoryItem = ({type, active, category}) => {
         );
     } else if (type === "add") {
         return (
-            <div className="category-item flex flex-col items-center justify-between cursor-pointer">
+            <div className="category-item flex flex-col items-center justify-between cursor-pointer" onClick={() => setIsAddModalOpen(true)}>
                 <div
                     className="category-icon w-16 h-16 flex items-center justify-center bg-primary rounded-full text-xl text-white border-4 border-soft-gray transition-all">
                     <GoPlus />
@@ -48,7 +50,7 @@ const CategoryItem = ({type, active, category}) => {
         );
     } else if (type === "edit") {
         return (
-            <div className="category-item flex flex-col items-center justify-between cursor-pointer">
+            <div className="category-item flex flex-col items-center justify-between cursor-pointer" onClick={() => navigate("/bills")}>
                 <div
                     className="category-icon w-16 h-16 flex items-center justify-center bg-secondary rounded-full text-xs text-white border-4 border-soft-gray transition-all">
                     <FaPen />
