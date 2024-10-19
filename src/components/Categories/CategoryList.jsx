@@ -124,8 +124,8 @@ const CategoryList = () => {
                     </button>
                 </div>
             )}
-            <AddCategoryModal onOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />
-            <EditCategoryModal onOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
+            <AddCategoryModal setIsAddModalOpen={setIsAddModalOpen} onOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(false)} />
+            <EditCategoryModal setIsEditModalOpen={setIsEditModalOpen} onOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
         </div>
     );
 };

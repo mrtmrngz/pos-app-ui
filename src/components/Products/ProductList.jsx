@@ -25,7 +25,7 @@ const ProductList = () => {
 
                 </div>
             </div>
-            <AddProductModal onOpen={isModalAddOpen} onClose={() => setIsAddModalOpen(false)} />
+            <AddProductModal setIsAddModalOpen={setIsAddModalOpen} onOpen={isModalAddOpen} onClose={() => setIsAddModalOpen(false)} />
             <EditProductModal onOpen={isEditModalOpen} setIsEditModalOpen={setIsEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
         </div>
     );
