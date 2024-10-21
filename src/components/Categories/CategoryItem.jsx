@@ -13,7 +13,7 @@ const CategoryItem = ({type, active, category, setIsAddModalOpen, setIsEditModal
                 <div className="category-img w-16 h-16 flex items-center justify-center rounded-full border-4 border-soft-gray transition-all overflow-hidden">
                     <img
                         className="w-full h-full object-cover object-center rounded-full"
-                        src={category.image}
+                        src={category.imageUrl}
                         alt=""/>
                 </div>
                 <div className="info">

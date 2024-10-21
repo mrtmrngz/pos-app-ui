@@ -11,7 +11,7 @@ const ProductItem = ({type, color, product, setIsAddModalOpen, setIsEditModalOpe
             <div className="product-item border border-color cursor-pointer transition-all duration-300 rounded-xl">
                 {!color ? (
                     <div className="product-img max-w-full h-28 rounded-xl rounded-b-none">
-                        <img className="w-full h-full object-cover rounded-xl rounded-b-none" src={product?.image} alt=""/>
+                        <img className="w-full h-full object-cover rounded-xl rounded-b-none" src={product?.imageUrl} alt=""/>
                     </div>
                 ) : (
                     <div

@@ -3,7 +3,6 @@ import ProtectedRoute from "./libs/ProtectedRoute.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import MainLayout from "./components/Layout/MainLayout.jsx";
 import BillPage from "./pages/BillPage.jsx";
-import CustomersPage from "./pages/CustomersPage.jsx";
 import StatisticsPage from "./pages/StatisticsPage.jsx";
 
 
@@ -23,10 +22,6 @@ const routes = createBrowserRouter([
                     {
                         path: "bills",
                         element: <BillPage />
-                    },
-                    {
-                        path: "customers",
-                        element: <CustomersPage />
                     },
                     {
                         path: "statistics",

@@ -1,6 +1,6 @@
 import {useField} from "formik";
 
-const CustomSelect = ({label, htmlFor, data, ...props}) => {
+const CustomSelect = ({label, htmlFor, data, selectTitle, ...props}) => {
 
     const [field, meta] = useField(props)
 
@@ -11,7 +11,7 @@ const CustomSelect = ({label, htmlFor, data, ...props}) => {
             </label>
 
             <select className="border border-border-color focus:outline-none focus:border-text-color h-9 pl-2" {...field} {...props} >
-                <option value="">Select a Category</option>
+                <option value="">{selectTitle}</option>
                 {data.map((item) => (
                     <option key={item.key} value={item.key}>{item.value}</option>
                 ))}

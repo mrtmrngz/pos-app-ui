@@ -92,6 +92,8 @@
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
+    /* Tables START */
+
     .custom-table {
         & > thead > tr > th {
             @apply p-4 bg-[#eaeaea] border border-border-color text-sm font-bold text-left;
@@ -100,15 +102,65 @@
         & > tbody > tr {
             @apply hover:bg-[#eaeaea];
 
-             & > td {
-                 @apply p-4 border border-border-color border-l-0 text-sm;
+            & > td {
+                @apply p-4 border border-border-color border-l-0 text-sm;
 
-                 &:last-child {
-                     @apply border-r-0;
-                 }
-             }
+                &:last-child {
+                    @apply border-r-0;
+                }
+            }
         }
     }
+
+    .bill-print-table {
+        thead > tr > th {
+            @apply bg-transparent border-t-0 border-l-0 border-r-0 p-0 py-5 pr-5;
+
+            &:last-child {
+                @apply pr-0;
+            }
+
+            &.bill-price, &.bill-quantity {
+                @apply text-center;
+            }
+
+            &.bill-image {
+                @apply h-[unset];
+            }
+        }
+
+    }
+
+    .bill-print-table {
+        & > tbody > tr {
+            @apply hover:bg-transparent border-0 border-b;
+
+            & > td {
+                @apply p-0 pr-4 py-4 border-b-0 border-r-0 border-0;
+
+                &:last-child {
+                    @apply pr-0;
+                }
+
+                &.bill-price, &.bill-quantity {
+                    @apply text-center;
+                }
+
+                &.bill-total {
+                    @apply font-semibold;
+                }
+            }
+        }
+
+        .bill-total {
+            @apply text-right;
+        }
+    }
+
+    /* Tables END */
+
+
+    /*! Modal START  */
 
     .backdrop {
         /*visibility: hidden;*/
@@ -139,5 +191,11 @@
             height: 100%;
         }
     }
+
+    .modal-wrapper.print-bill-modal {
+        @apply sm:max-h-[600px] h-full;
+    }
+
+    /*! Modal END  */
 
 }

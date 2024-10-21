@@ -1,134 +1,26 @@
 
-const CustomTable = () => {
-
-
+const CustomTable = ({data, columns, tableClass, tableKey}) => {
 
     return (
-        <table className="custom-table w-full">
+        <table className={`custom-table w-full ${tableClass ? tableClass : ""}`}>
             <thead>
             <tr>
-                <th style={{width: "10%"}}>Bill No</th>
-                <th style={{width: "25%"}}>Customer Name</th>
-                <th style={{width: "20%"}}>Created At</th>
-                <th style={{width: "250px"}}>Payment Method</th>
-                <th>Total Price</th>
-                <th style={{width: "150px"}}>Print</th>
+                {columns.map(column => (
+                    <th className={`${column.className}`} key={column.key} style={column.width && {width: `${column.width}`}}>{column.value}</th>
+                ))}
             </tr>
             </thead>
 
             <tbody>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
-            <tr className="border border-border-color border-t-0">
-                <td>INV-123456</td>
-                <td>
-                    <h3 className="text-sm">Customer 1</h3>
-                </td>
-                <td>
-                    <span>October 15, 2024</span>
-                </td>
-                <td>Cash</td>
-                <td>
-                    <strong>$5.800.000.000.00</strong>
-                </td>
-                <td>
-                    <button className="text-blue-500">Print</button>
-                </td>
-            </tr>
+            {data.map(item => (
+                <tr key={item[tableKey]} className="border border-border-color border-t-0">
+                    {columns.map(column => (
+                        <td key={column.key} className={`${column.className}`}>
+                            {column.render(item)}
+                        </td>
+                    ))}
+                </tr>
+            ))}
             </tbody>
         </table>
     );

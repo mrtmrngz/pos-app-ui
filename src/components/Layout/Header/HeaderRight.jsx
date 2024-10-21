@@ -24,11 +24,6 @@ const HeaderRight = () => {
             icon: <LiaNewspaperSolid size={28} />
         },
         {
-            label: "Customers",
-            url: "/customers",
-            icon: <AiOutlineUser size={28} />
-        },
-        {
             label: "Statistics",
             url: "/statistics",
             icon: <IoMdStats size={28} />
