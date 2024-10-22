@@ -20,6 +20,10 @@
         @apply border border-border-color focus:outline-none focus:border-text-color h-9 p-2 pl-2;
     }
 
+    input {
+        @apply text-sm;
+    }
+
     textarea {
         @apply resize-none;
     }

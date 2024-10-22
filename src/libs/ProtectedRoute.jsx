@@ -4,7 +4,7 @@ const ProtectedRoute = () => {
 
     const user = true
 
-    return user ? <Outlet /> : <Navigate to="/" />
+    return user ? <Outlet /> : <Navigate to="/login" />
 
 }
 
